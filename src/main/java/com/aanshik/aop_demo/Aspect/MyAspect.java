@@ -12,6 +12,9 @@ public class MyAspect {
         System.out.println("Payment Started");
     }
 
+
+    //wehn makePayment has arguments then put .makePayment(..) instead of makePayment()
+
     @After("execution(* com.aanshik.aop_demo.Service.ServiceImpl.PaymentServiceImpl.makePayment())")
     public void succ(){
         System.out.println("Payment Successful");
