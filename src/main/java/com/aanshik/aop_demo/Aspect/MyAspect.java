@@ -1,5 +1,6 @@
 package com.aanshik.aop_demo.Aspect;
 
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 
@@ -9,5 +10,10 @@ public class MyAspect {
     @Before("execution(* com.aanshik.aop_demo.Service.ServiceImpl.PaymentServiceImpl.makePayment())")
     public void auth(){
         System.out.println("Payment Started");
+    }
+
+    @After("execution(* com.aanshik.aop_demo.Service.ServiceImpl.PaymentServiceImpl.makePayment())")
+    public void succ(){
+        System.out.println("Payment Successful");
     }
 }
